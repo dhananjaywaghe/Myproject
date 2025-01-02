@@ -8,9 +8,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/dhananjaywaghe/Myproject.git'
             }
         }
+
         stage("run cmd on local"){
             steps{
                 bat 'hello world'
+
             }
         }
 
