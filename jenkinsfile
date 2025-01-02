@@ -9,27 +9,13 @@ pipeline {
             }
         }
 
-        stage("run cmd on local"){
-            steps{
-                bat 'hello world'
-
+        stage('Execute Python Script') {
+            steps {
+              script {
+                echo "hello world"
+               }
             }
         }
-
-        // stage('Execute Python Script') {
-        //     steps {
-        //       script {
-        //           // Capture the output of the 'cd' command
-        //            def workspacePath = bat(script: 'cd', returnStdout: true).trim()
-
-        //           // Print the captured path to the console
-        //            echo "Current working directory: ${workspacePath}"
-
-        //            // Use the path for further logic if needed
-        //            bat "python ${workspacePath}\\hello.py"
-        //        }
-        //     }
-        // }
 
     }
 }
