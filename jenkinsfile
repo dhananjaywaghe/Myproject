@@ -2,19 +2,27 @@ pipeline {
     agent any
 
     stages {
-        // stage('Clone Repository') {
-        //     steps {
-        //         // Clone the GitHub repository
-        //         git branch: 'main', url: 'https://github.com/dhananjaywaghe/Myproject.git'
-        //     }
-        // }
+        stage('Clone Repository') {
+            steps {
+                // Clone the GitHub repository
+                git branch: 'main', url: 'https://github.com/dhananjaywaghe/Myproject.git'
+            }
+        }
 
         stage('Execute Python Script') {
             steps {
-                // Execute the hello.py script
-                bat 'cd'
-                //bat 'python3 hello.py
+              script {
+                  // Capture the output of the 'cd' command
+                   def workspacePath = bat(script: 'cd', returnStdout: true).trim()
+
+                  // Print the captured path to the console
+                   echo "Current working directory: ${workspacePath}"
+
+                   // Use the path for further logic if needed
+                   bat "python ${workspacePath}\\hello.py"
+               }
             }
         }
+
     }
 }
