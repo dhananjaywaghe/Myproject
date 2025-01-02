@@ -12,7 +12,8 @@ pipeline {
         stage('Execute Python Script') {
             steps {
                 // Execute the hello.py script
-                bat 'python3 hello.py'
+                bat 'pwd'
+                //bat 'python3 hello.py
             }
         }
     }
