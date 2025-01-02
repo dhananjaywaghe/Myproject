@@ -19,7 +19,7 @@ pipeline {
                    echo "Current working directory: ${workspacePath}"
 
                    // Use the path for further logic if needed
-                   bat "python ${workspacePath}\\hello.py"
+                   bat "python hello.py"
                }
             }
         }
