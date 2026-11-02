@@ -22,4 +22,4 @@ jobs:
     needs: build
     steps:
       - name: Deploy job
-        run: echo "hello from deploy"
+        run: uname -r
