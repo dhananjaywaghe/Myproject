@@ -1,0 +1,24 @@
+name: Hello World Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "Hello World from GitHub Actions!"
+
+      - name: Check Python version
+        run: python --version
