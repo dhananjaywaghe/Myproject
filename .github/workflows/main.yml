@@ -10,15 +10,20 @@ on:
       - main
 
 jobs:
-  hello-world:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Test job
+        run: echo "Hello from test"
 
-      - name: Print message
-        run: echo "Hello World from Devops and gen ai!"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build job
+        run: echo "Hello from build"
 
-      - name: Check Python version
-        run: python --version
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy job
+        run: echo "hello from deploy"
